@@ -20,6 +20,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+// You can use (not a good practice)
+// app.get('/', (req, res) => {
+//   res.render('index', {title: 'Welcome to express'});
+// })
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
