@@ -10,14 +10,28 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+// app.set("views", "./src/views");
+// app.set("view engine", "ejs");
+
+// app.engine('html', swig.renderFile)
+
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "html");
+
+// app.engine("html", handlebars.engine);
+// app.set("view engine", "handlebars");
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// if you are using a framework for the frontend part, just put an index file in public folder 
+app.use(express.static(path.join(__dirname, 'public'))); 
 
 app.use('/', indexRouter);
 // You can use (not a good practice)
